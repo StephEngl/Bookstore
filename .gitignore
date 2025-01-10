@@ -1,0 +1,6 @@
+# Dateinamen von Dateien oder Ordnern, die nicht hochgeladen werden sollen
+# mit "git status" prüfen
+# z.b. Datei über "passwörter.txt"
+# Ordner mit "/node_modules" (große Bootstrap-Datei)
+
+script.js
