@@ -6,12 +6,19 @@
     <title>Bookstore</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/assets.css">
+    <script src="db.js"></script>
     <script src="./script.js"></script>
     <script src="./scripts/templates.js"></script>
 </head>
-<body>
-    <header></header>
-    <main></main>
+<body onload="renderBooks()">
+    <header>
+        <img src="./assets/icons/butterfly_icon.svg" alt="Lila Schmetterling">
+        <h1>SeitenZauber</h1>
+    </header>
+    <main>
+        <div id="bookCardContainer"></div>
+    </main>
     <footer></footer>
     
 </body>
