@@ -3,7 +3,7 @@ let books = [
     name: "Mathe kann jeder - und wir beweisen es",
     author: "Josef Naber, Johannes Mensing",
     likes: 578,
-    liked: false,
+    liked: true,
     price: 16.0,
     publishedYear: 2024,
     genre: "Sachbuch",

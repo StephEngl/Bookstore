@@ -1,31 +1,52 @@
 function onInit() {
-    renderBooks();
+  renderBooks();
 }
 
 function renderBooks() {
-    let booksRef = document.getElementById("bookCardContainer");
-    booksRef.innerHTML = "";
-    
-    for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
-        booksRef.innerHTML += getBookInfoTemplate(indexBooks);
+  getFromLocalStorage();
+  let booksRef = document.getElementById("bookCardContainer");
+  booksRef.innerHTML = "";
 
-        for (let indexComments = 0; indexComments < books[indexComments].comments.length; indexComments++) {
-        let commentsRef = document.getElementById("comments${indexBooks}");
-        commentsRef.innerHTML = "";
-        
-        commentsRef.innerHTML += getCommentsTemplate(indexBooks, indexComments);      
-        }    
-    };
+  for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
+    booksRef.innerHTML += getBookInfoTemplate(indexBooks);
+    setHeartIcon(indexBooks);
+    let commentsRef = document.getElementById("comments${indexBooks}");
+    commentsRef.innerHTML = "";
+    for (
+      let indexComments = 0;
+      indexComments < books[indexComments].comments.length;
+      indexComments++
+    ) {
+      commentsRef.innerHTML += getCommentsTemplate(indexBooks, indexComments);
+    }
+  }
+}
+
+function setHeartIcon(indexBooks) {
+  if (books[indexBooks].liked == false) {
+    document.getElementById("iconHeartClickAndChange").src =
+      "./assets/icons/heartIconDislike.svg";
+  } else {
+    document.getElementById("iconHeartClickAndChange").src =
+      "./assets/icons/heartIconLike.svg";
+  }
+}
+
+function changeHeartIcon(indexBooks) {
+  books[indexBooks].liked = !books[indexBooks].liked;
+  if (books[indexBooks].liked) {
+    books[indexBooks].likes += 1;
+  } else {
+    books[indexBooks].likes -= 1;
+  }
+  saveToLocalStorage();
+  renderBooks();
 }
 
 function saveToLocalStorage() {
-localStorage.setItem("books", JSON.stringify(books))
+  localStorage.setItem("books", JSON.stringify(books));
 }
 
-function changeHeartIcon() {
-    if (document.getElementById("iconHeartClickAndChange").src == "assets/icons/heart _Icon.svg"){
-        document.getElementById("iconHeartClickAndChange").src = "assets/icons/heartPurple.svg";
-    } else {
-        document.getElementById("iconHeartClickAndChange").src = "assets/icons/heart _Icon.svg";
-    }
+function getFromLocalStorage() {
+  books = JSON.parse(localStorage.getItem("books"));
 }
