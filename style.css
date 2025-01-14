@@ -1,4 +1,114 @@
+body {
+  font-family: "Comfortaa";
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 header {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  background-color: var(--mark-color);
+  height: 64px;
+}
+
+.header_container {
+  margin: var(--main-margin);
+  display: flex;
+}
+
+#bookCardContainer {
+  margin: var(--main-margin);
+  width: 50%;
+  background-color: var(--mark-color);
+  border-radius: 12px;
+  display: flex;
+}
+
+h2 {
+  margin: 16px;
+  overflow-wrap: break-word;
+}
+
+.bookCardHeadline {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.bookCardHeadline::before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 90%;
+  border-bottom: 3px solid #5d397f;
+}
+
+.bookCardHeadline > img {
+  width: 72px;
+  height: 84px;
+  margin: 16px;
+}
+
+.priceAndLikes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 16px;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 86px;
+}
+
+.bookInfos {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  gap: 24px;
+}
+
+.bookInfo {
+}
+
+h3 {
+  margin-bottom: 8px;
+}
+
+.comments {
+  display: flex;
+}
+
+#commentInput {
+  border-radius: 6px;
+  flex-grow: 1;
+  font-family: Comfortaa;
+  padding: 8px;
+  border-color: #5d397f;
+}
+
+button {
+  border-color: #5d397f;
+  border-radius: 6px;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  scale: 1.05;
+}
+
+button > img {
+  width: 24px;
 }

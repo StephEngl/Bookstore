@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookstore</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./style/assets.css">
-    <script src="script.js"></script>
-    <script src="./scripts/db.js"></script>
-    <script src="./scripts/templates.js"></script>
-</head>
-<body onload="renderBooks()">
+    <link rel="stylesheet" href="style/standard.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/fonts.css" />
+    <link rel="stylesheet" href="./style/assets.css" />
+    <script src="script.js" defer></script>
+    <script src="./scripts/db.js" defer></script>
+    <script src="./scripts/templates.js" defer></script>
+  </head>
+  <body onload="onInit()">
     <header>
-        <img src="./assets/icons/butterfly_icon.svg" alt="Lila Schmetterling">
+      <div class="header_container">
+        <img src="./assets/icons/butterfly_icon.svg" alt="Lila Schmetterling" />
         <h1>SeitenZauber</h1>
+      </div>
     </header>
     <main>
-        <div id="bookCardContainer"></div>
-
-        <h3>Kommentare</h3>
-    <div>
-        <div class="user" id="user"></div>
-        <div class="comment" id = "comment" ></div>
-    </div>
-    <input id = "commentInput" type="text" placeholder="Schreibe einen Kommentar...">
-    <button><img src="./assets/icons/pencilViolet.svg" alt=""></button>
+      <div id="bookCardContainer"></div>
     </main>
     <footer></footer>
-    
-</body>
+  </body>
 </html>

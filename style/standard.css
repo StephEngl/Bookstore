@@ -4,6 +4,13 @@
     scroll-behavior: smooth;
 }
 
+:root {
+    background-color: #c3b5dc;    
+    --main-margin: 36px 96px;
+    --max-width: 1440px;
+    --mark-color: #ba8ae6;;
+  }
+
 a {
     text-decoration: none;
 }

@@ -2,7 +2,7 @@
 /* svg Herz rot einfärben */
 /* filter: invert(53%) sepia(74%) saturate(2643%) hue-rotate(159deg) brightness(91%) contrast(101%); */
 
-header > img {
+.header_container > img {
     height: 36px;
     width: 36px;
 }
