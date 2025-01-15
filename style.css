@@ -18,11 +18,17 @@ header {
 }
 
 #bookCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bookCard {
   margin: var(--main-margin);
-  width: 50%;
+  width: 400px;
   background-color: var(--mark-color);
   border-radius: 12px;
   display: flex;
+  flex-direction: column;
 }
 
 h2 {

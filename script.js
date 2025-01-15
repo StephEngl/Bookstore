@@ -6,28 +6,32 @@ function renderBooks() {
   getFromLocalStorage();
   let booksRef = document.getElementById("bookCardContainer");
   booksRef.innerHTML = "";
-
   for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
     booksRef.innerHTML += getBookInfoTemplate(indexBooks);
     setHeartIcon(indexBooks);
-    let commentsRef = document.getElementById("comments${indexBooks}");
-    commentsRef.innerHTML = "";
-    for (
-      let indexComments = 0;
-      indexComments < books[indexComments].comments.length;
-      indexComments++
-    ) {
-      commentsRef.innerHTML += getCommentsTemplate(indexBooks, indexComments);
-    }
+
+    // renderComments(indexBooks);
   }
 }
 
-function setHeartIcon(indexBooks) {
-  if (books[indexBooks].liked == false) {
-    document.getElementById("iconHeartClickAndChange").src =
+function renderComments() {
+  let commentsRef = document.getElementById("comments${indexBooks}");
+  commentsRef.innerHTML = "";
+  for (
+    let indexComments = 0;
+    indexComments < books[indexComments].comments.length;
+    indexComments++
+  ) {
+    commentsRef.innerHTML += getCommentsTemplate(indexBooks, indexComments);
+  }
+}
+
+function setHeartIcon(indexBooks) { 
+  if (false == books[indexBooks].liked) {
+    document.getElementById("iconHeartClickAndChange"+[indexBooks]).src =
       "./assets/icons/heartIconDislike.svg";
   } else {
-    document.getElementById("iconHeartClickAndChange").src =
+    document.getElementById("iconHeartClickAndChange"+[indexBooks]).src =
       "./assets/icons/heartIconLike.svg";
   }
 }
@@ -43,10 +47,14 @@ function changeHeartIcon(indexBooks) {
   renderBooks();
 }
 
+// Local Storage
 function saveToLocalStorage() {
   localStorage.setItem("books", JSON.stringify(books));
 }
 
 function getFromLocalStorage() {
-  books = JSON.parse(localStorage.getItem("books"));
+  let myBooks = JSON.parse(localStorage.getItem("books"));
+  if (null != myBooks) {
+    books = myBooks;
+  }
 }
