@@ -13,14 +13,18 @@
     <script src="./scripts/db.js" defer></script>
     <script src="./scripts/templates.js" defer></script>
   </head>
-  <body onload="onInit()">
+  <body onload="renderAllBooks()">
     <header>
       <div class="header_container_outer">
         <div class="header_container">
           <img src="./assets/icons/butterfly_icon.svg" alt="Lila Schmetterling" />
           <h1>SeitenZauber</h1>
         </div>
-        <div class="filter_container"><p onclick="renderBooks()" class="filter">Alle</p><p onclick="renderFavoriteBooks()" class="filter_separator">|</p><p class="filter">Favoriten</p></div>
+        <div class="filter_container">
+          <p onclick="renderAllBooks(); toggleFilter('filter_all');" class="filter filter_active" id="filter_all">Alle</p>
+          <p class="filter_separator">|</p>
+          <p onclick="renderFavoriteBooks(); toggleFilter('filter_favorites');" class="filter" id="filter_favorites">Favoriten</p>
+        </div>
       </div>
       
     </header>

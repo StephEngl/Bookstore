@@ -10,9 +10,9 @@ function getBookInfoTemplate(indexBooks) {
             <div class="likes">${books[indexBooks].likes} <div class="heartIcon"><img onclick="changeHeartIcon(${indexBooks})" id="iconHeartClickAndChange${indexBooks}" src="./assets/icons/heartIconDislike.svg" alt="Herz"></div></div>
         </div> 
         <div class = "bookInfos" id="bookInfos">
-            <div><h3 class="bookInfo">Autor/in(nen)</h3><p>${books[indexBooks].author}</p></div> 
-            <div><h3 class="bookInfo">Erscheinungsjahr</h3><p>${books[indexBooks].publishedYear}</p></div> 
-            <div><h3 class="bookInfo">Genre</h3><p>${books[indexBooks].genre}</p></div> 
+            <div class="bookInfo"><p>Autor/in(nen)</p><h3>${books[indexBooks].author}</h3></div> 
+            <div class="bookInfo"><p>Erscheinungsjahr</p><h3>${books[indexBooks].publishedYear}</h3></div> 
+            <div class="bookInfo"><p>Genre</p><h3>${books[indexBooks].genre}</h3></div> 
         </div>
         <div class="comments_container_outer">
         <h3>Kommentare</h3>

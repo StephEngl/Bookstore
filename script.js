@@ -1,4 +1,4 @@
-function onInit() {
+function renderAllBooks() {
   getFromLocalStorage();
   renderBooks();
 }
@@ -27,14 +27,25 @@ function renderComments(indexBooks) {
 
 function renderFavoriteBooks() {
   getFromLocalStorage();
-  let favoriteBooks = document.getElementById("bookCardContainer");
-  favoriteBooks.innerHTML = "";
-  for (let indexFavoriteBooks = 0; indexFavoriteBooks < books[indexBooks].length; indexFavoriteBooks++) {
-    if (books[indexBooks].liked)
-    favoriteBooks.innerHTML += getBookInfoTemplate[indexFavoriteBooks]; 
+  let favoriteBooks = [];
+  for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
+    if (books[indexBooks].liked) {
+      favoriteBooks.push(books[indexBooks]); 
+    }
   }
+  books = favoriteBooks;
+  renderBooks();
 }
 
+function toggleFilter(id) {
+  if (document.getElementById(id).classList.contains("filter_active")) {
+    return;
+  }
+  document.getElementById("filter_all").classList.toggle("filter_active");
+  document.getElementById("filter_favorites").classList.toggle("filter_active");
+}
+
+// Like Function
 function setHeartIcon(indexBooks) { 
   if (false == books[indexBooks].liked) {
     document.getElementById("iconHeartClickAndChange"+[indexBooks]).src =

@@ -1,6 +1,6 @@
 :root {
-  background-color: #c3b5dc;    
-  --main-margin: 36px 0 36px 96px;
+  background-color: #c3b5dc;
+  --main-margin: 36px 96px 36px 96px;
   --max-width: 1440px;
   --mark-color: #ba8ae6;
   --light-color: #c3b5dc;
@@ -52,35 +52,44 @@ header {
 
 .filter {
   cursor: pointer;
-  font-weight: bold;
   transition: all 200ms;
 }
 
 .filter:hover {
   scale: 1.1;
+  font-weight: bold;
+  color: var(--dark-color);
+}
+
+.filter_active {
+  font-weight: bold;
   color: var(--dark-color);
 }
 
 /* Main Section */
 main {
   display: flex;
-  flex-direction: column;
   flex-grow: 1;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 #bookCardContainer {
   margin: var(--main-margin);
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  gap: 36px;
 }
 
 .bookCard {
-  width: 400px;
+  width: 500px;
   background-color: var(--mark-color);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 36px;
 }
 
 h2 {
@@ -92,6 +101,7 @@ h2 {
   display: flex;
   position: relative;
   align-items: center;
+  height: 136px;
 }
 
 .bookCardHeadline::before {
@@ -138,6 +148,12 @@ h2 {
   gap: 24px;
   padding-bottom: 16px;
   border-bottom: 3px solid var(--dark-color);
+}
+
+.bookInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h3 {
@@ -213,6 +229,27 @@ button > img {
   width: 24px;
 }
 
+@media (max-width: 1250px) {
+  :root {
+    --main-margin: 36px;
+  }
+}
+
+@media (max-width: 1150px) {
+  #bookCardContainer {
+  justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .bookCard {
+  width: 400px;
+  }
+}
+
+
+
+/* Footer */
 footer {
   width: 100%;
   min-height: 56px;

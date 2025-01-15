@@ -4,15 +4,6 @@
     scroll-behavior: smooth;
 }
 
-:root {
-    background-color: #c3b5dc;    
-    --main-margin: 36px 0 36px 96px;
-    --max-width: 1440px;
-    --mark-color: #ba8ae6;
-    --light-color: #c3b5dc;
-    --dark-color: #5d397f;
-  }
-
 a {
     text-decoration: none;
 }
