@@ -9,17 +9,16 @@ function renderBooks() {
   for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
     booksRef.innerHTML += getBookInfoTemplate(indexBooks);
     setHeartIcon(indexBooks);
-
-    // renderComments(indexBooks);
+    renderComments(indexBooks);
   }
 }
 
-function renderComments() {
-  let commentsRef = document.getElementById("comments${indexBooks}");
+function renderComments(indexBooks) {
+  let commentsRef = document.getElementById("comments" + [indexBooks]);
   commentsRef.innerHTML = "";
   for (
     let indexComments = 0;
-    indexComments < books[indexComments].comments.length;
+    indexComments < books[indexBooks].comments.length;
     indexComments++
   ) {
     commentsRef.innerHTML += getCommentsTemplate(indexBooks, indexComments);
