@@ -1,3 +1,12 @@
+:root {
+  background-color: #c3b5dc;    
+  --main-margin: 36px 0 36px 96px;
+  --max-width: 1440px;
+  --mark-color: #ba8ae6;
+  --light-color: #c3b5dc;
+  --dark-color: #5d397f;
+}
+
 body {
   font-family: "Comfortaa";
   display: flex;
@@ -8,7 +17,7 @@ body {
 
 header {
   background-color: var(--mark-color);
-  height: 64px;
+  height: 96px;
   width: auto;
   padding: 36px 96px 36px 96px;
   display: flex;
@@ -52,17 +61,21 @@ header {
   color: var(--dark-color);
 }
 
+/* Main Section */
 main {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+  justify-content: flex-start;
 }
 
 #bookCardContainer {
+  margin: var(--main-margin);
   display: flex;
   flex-wrap: wrap;
 }
 
 .bookCard {
-  margin: var(--main-margin);
   width: 400px;
   background-color: var(--mark-color);
   border-radius: 12px;

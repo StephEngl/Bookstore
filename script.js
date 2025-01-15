@@ -1,9 +1,9 @@
 function onInit() {
+  getFromLocalStorage();
   renderBooks();
 }
 
 function renderBooks() {
-  getFromLocalStorage();
   let booksRef = document.getElementById("bookCardContainer");
   booksRef.innerHTML = "";
   for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
@@ -22,6 +22,16 @@ function renderComments(indexBooks) {
     indexComments++
   ) {
     commentsRef.innerHTML += getCommentsTemplate(indexBooks, indexComments);
+  }
+}
+
+function renderFavoriteBooks() {
+  getFromLocalStorage();
+  let favoriteBooks = document.getElementById("bookCardContainer");
+  favoriteBooks.innerHTML = "";
+  for (let indexFavoriteBooks = 0; indexFavoriteBooks < books[indexBooks].length; indexFavoriteBooks++) {
+    if (books[indexBooks].liked)
+    favoriteBooks.innerHTML += getBookInfoTemplate[indexFavoriteBooks]; 
   }
 }
 
