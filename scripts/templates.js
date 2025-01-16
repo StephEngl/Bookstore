@@ -1,25 +1,25 @@
 function getBookInfoTemplate(indexBooks) {
   return /*html*/ `
-    <div class="bookCard">
-        <div class="bookCardHeadline">
+    <div class="book_card">
+        <div class="book_card_headline">
             <img src="./assets/img/bookViolet.png" alt="Lila Buch">
             <h2>${books[indexBooks].name}</h2>
         </div>
-        <div class="priceAndLikes" id = "priceAndLikes">
+        <div class="price_and_likes">
             <p>${books[indexBooks].price.toFixed(2)} €</p>
-            <div class="likes">${books[indexBooks].likes} <div class="heartIcon"><img onclick="changeHeartIcon(${indexBooks})" id="iconHeartClickAndChange${indexBooks}" src="./assets/icons/heartIconDislike.svg" alt="Herz"></div></div>
+            <div class="likes">${books[indexBooks].likes} <div class="heart_icon"><img onclick="changeHeartIcon(${indexBooks})" id="iconHeartClickAndChange${indexBooks}" src="./assets/icons/heartIconDislike.svg" alt="Herz"></div></div>
         </div> 
-        <div class = "bookInfos" id="bookInfos">
-            <div class="bookInfo"><p>Autor/in(nen)</p><h3>${books[indexBooks].author}</h3></div> 
-            <div class="bookInfo"><p>Erscheinungsjahr</p><h3>${books[indexBooks].publishedYear}</h3></div> 
-            <div class="bookInfo"><p>Genre</p><h3>${books[indexBooks].genre}</h3></div> 
+        <div class = "book_infos">
+            <div class="book_info"><p>Autor/in(nen)</p><h3>${books[indexBooks].author}</h3></div> 
+            <div class="book_info"><p>Erscheinungsjahr</p><h3>${books[indexBooks].publishedYear}</h3></div> 
+            <div class="book_info"><p>Genre</p><h3>${books[indexBooks].genre}</h3></div> 
         </div>
         <div class="comments_container_outer">
         <h3>Kommentare</h3>
         <div class = "comments_container" id="comments${indexBooks}"></div>
-        <div class="commentsInput">
-            <input id = "commentInput" type="text" placeholder="Schreibe einen Kommentar...">
-            <button><img src="./assets/icons/pencilViolet.svg" alt=""></button>
+        <div class="comments_input_container">
+            <input class="comment_input" id = "commentInput${indexBooks}" type="text" placeholder="Schreibe einen Kommentar...">
+            <button onclick="addNewComment(id)" id="${indexBooks}"><img src="./assets/icons/pencilViolet.svg" alt=""></button>
         </div>
 
      </div>

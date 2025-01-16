@@ -1,6 +1,6 @@
 :root {
   background-color: #c3b5dc;
-  --main-margin: 36px 96px 36px 96px;
+  --main-margin: 36px 96px;
   --max-width: 1440px;
   --mark-color: #ba8ae6;
   --light-color: #c3b5dc;
@@ -17,9 +17,8 @@ body {
 
 header {
   background-color: var(--mark-color);
-  height: 96px;
-  width: auto;
-  padding: 36px 96px 36px 96px;
+  min-height: 96px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,6 +30,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: var(--main-margin);
 }
 
 .header_container {
@@ -43,6 +43,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 8px;
 }
 
 .filter_separator {
@@ -52,7 +53,7 @@ header {
 
 .filter {
   cursor: pointer;
-  transition: all 200ms;
+  transition: all 100ms;
 }
 
 .filter:hover {
@@ -74,7 +75,7 @@ main {
   align-items: center;
 }
 
-#bookCardContainer {
+#book_card_container {
   margin: var(--main-margin);
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +84,7 @@ main {
   gap: 36px;
 }
 
-.bookCard {
+.book_card {
   width: 500px;
   background-color: var(--mark-color);
   border-radius: 12px;
@@ -97,14 +98,14 @@ h2 {
   overflow-wrap: break-word;
 }
 
-.bookCardHeadline {
+.book_card_headline {
   display: flex;
   position: relative;
   align-items: center;
   height: 136px;
 }
 
-.bookCardHeadline::before {
+.book_card_headline::before {
   content: "";
   z-index: 1;
   position: absolute;
@@ -114,20 +115,20 @@ h2 {
   border-bottom: 3px solid var(--dark-color);
 }
 
-.bookCardHeadline > img {
+.book_card_headline > img {
   width: 72px;
   height: 84px;
   margin: 16px;
 }
 
-.priceAndLikes {
+.price_and_likes {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 16px;
 }
 
-.priceAndLikes > p {
+.price_and_likes > p {
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -139,7 +140,7 @@ h2 {
   width: 86px;
 }
 
-.bookInfos {
+.book_infos {
   position: relative;
   margin: 16px 16px 0 16px;
   display: flex;
@@ -150,7 +151,7 @@ h2 {
   border-bottom: 3px solid var(--dark-color);
 }
 
-.bookInfo {
+.book_info {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -190,7 +191,7 @@ h3 {
   gap: 8px;
 }
 
-.commentsInput {
+.comments_input_container {
   display: flex;
 }
 
@@ -200,7 +201,7 @@ h3 {
   gap: 12px;
 }
 
-#commentInput {
+.comment_input {
   border-radius: 6px;
   flex-grow: 1;
   font-family: Comfortaa;
@@ -236,18 +237,16 @@ button > img {
 }
 
 @media (max-width: 1150px) {
-  #bookCardContainer {
-  justify-content: center;
+  #book_card_container {
+    justify-content: center;
   }
 }
 
 @media (max-width: 550px) {
-  .bookCard {
-  width: 400px;
+  .book_card {
+    width: 400px;
   }
 }
-
-
 
 /* Footer */
 footer {

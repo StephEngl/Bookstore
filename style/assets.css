@@ -3,7 +3,7 @@
   width: 36px;
 }
 
-.heartIcon {
+.heart_icon {
     width: 36px;
     height: 36px;
     display: flex;
@@ -11,14 +11,14 @@
     justify-content: center;
 }
 
-.heartIcon > img {
+.heart_icon > img {
     width: 48px;
     height: 48px;
     cursor: pointer;
     transition: all 200ms;
 }
 
-.heartIcon > img:hover {
+.heart_icon > img:hover {
     scale: 1.05;
 }
 
