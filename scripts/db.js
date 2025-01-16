@@ -1,5 +1,31 @@
 let books = [
   {
+    name: "Aber meiner Tante hat's geholfen",
+    author: "Maximilian Doeckel, Jonathan Focke",
+    likes: 765,
+    liked: true,
+    price: 18.00,
+    publishedYear: 2024,
+    genre: "Sachbuch",
+    comments: [
+      {
+        name: "WissensDurst",
+        comment:
+          "Quarks rockt! Pseudowissenschaft wird hier so köstlich zerlegt, dass ich vor Lachen vom Stuhl falle. Total unterhaltsam!",
+      },
+      {
+        name: "DenkBombe",
+        comment:
+          "Informativ und unterhaltsam zugleich. Vermittelt wertvolles Wissen für den Alltag gegen Desinformation und Pseudoexperten.",
+      },
+      {
+        name: "ScienceNinja82",
+        comment:
+          "Endlich ein Buch, das Tante Ernas Wundermittel-Weisheiten auseinandernimmt! Wissenschaft mit Humor - einfach genial!",
+      },
+    ],
+  },
+  {
     name: "Mathe kann jeder - und wir beweisen es",
     author: "Josef Naber, Johannes Mensing",
     likes: 578,
