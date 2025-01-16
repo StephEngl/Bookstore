@@ -54,7 +54,7 @@ let books = [
   {
     name: "Das NEINhorn",
     author: "Marc-Uwe Kling",
-    likes: 320,
+    likes: 745,
     liked: true,
     price: 15.0,
     publishedYear: 2019,

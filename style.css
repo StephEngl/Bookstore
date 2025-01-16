@@ -5,6 +5,7 @@
   --mark-color: #ba8ae6;
   --light-color: #c3b5dc;
   --dark-color: #5d397f;
+  --card-margin: 16px;
 }
 
 body {
@@ -95,7 +96,7 @@ main {
 }
 
 h2 {
-  margin: 16px;
+  margin: var(--card-margin);
   overflow-wrap: break-word;
 }
 
@@ -119,14 +120,14 @@ h2 {
 .book_card_headline > img {
   width: 72px;
   height: 84px;
-  margin: 16px;
+  margin: var(--card-margin);
 }
 
 .price_and_likes {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 16px;
+  margin: var(--card-margin);
 }
 
 .price_and_likes > p {
@@ -164,7 +165,7 @@ h3 {
 }
 
 .comments_container_outer {
-  margin: 16px;
+  margin: var(--card-margin);
   display: flex;
   flex-direction: column;
   overflow-wrap: break-word;
@@ -274,6 +275,10 @@ button > img {
 }
 
 @media (max-width: 450px) {
+  :root {
+    --main-margin: 12px;
+  }
+
   .book_card {
     width: 300px;
   }
@@ -286,13 +291,13 @@ button > img {
   .filter_separator {
     display: none;
   }
-
-  :root {
-    --main-margin: 12px;
-  }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 350px) {
+  :root {
+    --card-margin: 8px;
+  }
+
   .book_card {
     width: 280px;
   }
@@ -314,6 +319,14 @@ button > img {
   .comment,
   .user {
     font-size: 12px;
+  }
+
+  .book_infos {
+    margin: 8px 8px 0 8px;
+  }
+
+  .likes {
+    justify-content: flex-end;
   }
 }
 
