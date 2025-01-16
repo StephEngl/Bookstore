@@ -40,7 +40,8 @@ function renderFavoriteBooks() {
 }
 
 function addNewComment(indexBooks) {
-  let commentInput = document.getElementById("commentInput" + indexBooks).value;
+  let commentInputRef = document.getElementById("commentInput" + indexBooks);
+  commentInput = commentInputRef.value;
   let user = "Stephanie";
   if ("" == commentInput) {
     return;
@@ -48,6 +49,7 @@ function addNewComment(indexBooks) {
   books[indexBooks].comments.unshift({ name: user, comment: commentInput });
   saveToLocalStorage();
   renderComments(indexBooks);
+  commentInputRef.value = "";
 }
 
 // Highlight Filtered Site
@@ -62,10 +64,10 @@ function toggleFilter(id) {
 // Like Function
 function setHeartIcon(indexBooks) {
   if (false == books[indexBooks].liked) {
-    document.getElementById("iconHeartClickAndChange" + [indexBooks]).src =
+    document.getElementById("icon_heart_click_and_change" + [indexBooks]).src =
       "./assets/icons/heartIconDislike.svg";
   } else {
-    document.getElementById("iconHeartClickAndChange" + [indexBooks]).src =
+    document.getElementById("icon_heart_click_and_change" + [indexBooks]).src =
       "./assets/icons/heartIconLike.svg";
   }
 }

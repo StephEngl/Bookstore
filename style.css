@@ -15,6 +15,7 @@ body {
   color: darkslategrey;
 }
 
+/* Header Section */
 header {
   background-color: var(--mark-color);
   min-height: 96px;
@@ -79,13 +80,13 @@ main {
   margin: var(--main-margin);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-width: var(--max-width);
   gap: 36px;
 }
 
 .book_card {
-  width: 500px;
+  width: 450px;
   background-color: var(--mark-color);
   border-radius: 12px;
   display: flex;
@@ -155,6 +156,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: right;
 }
 
 h3 {
@@ -230,6 +232,12 @@ button > img {
   width: 24px;
 }
 
+@media (max-width: 1600px) {
+  .book_card {
+    width: 500px;
+  }
+}
+
 @media (max-width: 1250px) {
   :root {
     --main-margin: 36px;
@@ -244,7 +252,68 @@ button > img {
 
 @media (max-width: 550px) {
   .book_card {
-    width: 400px;
+    width: 350px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .comment,
+  .user {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  .book_card {
+    width: 300px;
+  }
+
+  .filter_container {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .filter_separator {
+    display: none;
+  }
+
+  :root {
+    --main-margin: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  .book_card {
+    width: 280px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2,
+  .price_and_likes > p {
+    font-size: 16px;
+  }
+
+  h3,
+  p {
+    font-size: 14px;
+  }
+
+  .comment,
+  .user {
+    font-size: 12px;
   }
 }
 

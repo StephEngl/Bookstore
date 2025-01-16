@@ -7,7 +7,7 @@ function getBookInfoTemplate(indexBooks) {
         </div>
         <div class="price_and_likes">
             <p>${books[indexBooks].price.toFixed(2)} €</p>
-            <div class="likes">${books[indexBooks].likes} <div class="heart_icon"><img onclick="changeHeartIcon(${indexBooks})" id="iconHeartClickAndChange${indexBooks}" src="./assets/icons/heartIconDislike.svg" alt="Herz"></div></div>
+            <div class="likes">${books[indexBooks].likes} <div class="heart_icon"><img onclick="changeHeartIcon(${indexBooks})" id="icon_heart_click_and_change${indexBooks}" src="./assets/icons/heartIconDislike.svg" alt="Herz"></div></div>
         </div> 
         <div class = "book_infos">
             <div class="book_info"><p>Autor/in(nen)</p><h3>${books[indexBooks].author}</h3></div> 
